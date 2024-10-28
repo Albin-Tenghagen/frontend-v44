@@ -28,3 +28,38 @@ const fruitArrayFyra = ['apple', 'orange', 'banana'];
 fruitArrayFyra.unshift(['papaya', 'mango'])
 console.log(fruitArrayFyra)
 //UNSHIFT adderar till början av en array, så papaya o mango hamnar "först" som en array på plats 0
+
+//-------------------------------------------------------------
+
+const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numberArray.splice(4, 2 )
+console.log(numberArray)
+
+const andraNumberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+andraNumberArray.unshift(0)
+console.log(andraNumberArray)
+
+
+const randomNumberArray = [
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100)
+    ];
+console.log(randomNumberArray)
+
+randomNumberArray.forEach((randomNumberArray) => {
+    console.log(randomNumberArray)
+})
+
+let totaltvärde = randomNumberArray.reduce((yallahTotal, randomNumberArray) => {
+    return randomNumberArray + yallahTotal
+}, 0)
+console.log(totaltvärde)
