@@ -78,3 +78,13 @@ let totaltvärde = randomNumberArray.reduce((yallahTotal, randomNumberArray) => 
     return randomNumberArray + yallahTotal
 }, 0)
 console.log(totaltvärde)
+//____________________
+
+const långFruitArray = ['apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana'];
+console.log(långFruitArray)
+
+
+const långFruitArray2 = ['apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana', 'apple', 'orange', 'mandarine', 'banana'];
+långFruitArray2.splice(-0, 25)
+// startar -0 för att hitta slutet 
+console.log(långFruitArray2)
