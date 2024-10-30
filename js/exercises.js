@@ -99,16 +99,27 @@ console.log(characterCount);
 // ### filterByCountry
 
 // Skapa en funktion som tar emot listan på användare och en landskod och returnerar en ny lista innehållande endast användare med den landskoden.
-let nationalityUsers = users.filter(user => user.nat = 'CH')
+let nationalityUsers = users.filter(user => user.nat == 'AU')
 console.log(nationalityUsers)
 
 // ### filterByGender
 
 // Skapa en funktion som tar emot listan på användare och en sträng "Male" eller "Female" och returnerar en ny lista innehållande endast kvinnliga eller manliga användare.
+let femaleUsers = users.filter(user => user.name.title == ('Ms' || 'Mrs' || 'Miss' || 'Mademoiselle' || 'Madame'))
+console.log(femaleUsers);
+let maleUsers = users.filter(user => user.name.title == ('Mr' || 'Monsieur'))
+console.log(maleUsers)//FRÅGA MANDUSSS!!!!!!!
 
 // ### listEmails
 
 // Skapa en funktion som tar emot listan på användare och returnerar en lista innehållandes endast användarnas emailaddresser
+let x = users.map(user => users.email)
+console.log(x)
+let personWithMail = users.reduce((ackumulator, user) => {
+    ackumulator.push(user.email);
+    return ackumulator;
+}, [])
+console.log(personWithMail)
 
 // ### Utmaning! - Reformat Emails
 
