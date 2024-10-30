@@ -19,10 +19,10 @@ let b = [4, 5, 6];
 
 7.    Lägg ihop ovanstående arrayer.
 
-let a = [1, 2, 3, 7, 8, 9];
-let b = [4, 5, 6];
+let c = [1, 2, 3, 7, 8, 9];
+let d = [4, 5, 6];
 
-8.    Merga ner array b på index 3 array a.
+8.    Merga ner array d på index 3 array c.
 
 let arr = ["a", "b", "c"];
 

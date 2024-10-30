@@ -88,3 +88,7 @@ const långFruitArray2 = ['apple', 'orange', 'mandarine', 'banana', 'apple', 'or
 långFruitArray2.splice(-0, 25)
 // startar -0 för att hitta slutet 
 console.log(långFruitArray2)
+//------------------------------------------------------------------------------------------------
+
+//Code along del 2.
+
