@@ -113,7 +113,7 @@ console.log(maleUsers)//FRÅGA MANDUSSS!!!!!!!
 // ### listEmails
 
 // Skapa en funktion som tar emot listan på användare och returnerar en lista innehållandes endast användarnas emailaddresser
-let x = users.map(user => users.email)
+let x = users.map(user => user.email)
 console.log(x)
 let personWithMail = users.reduce((ackumulator, user) => {
     ackumulator.push(user.email);
