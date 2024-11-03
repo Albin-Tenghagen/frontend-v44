@@ -1,82 +1,121 @@
-//High order function: map(), filter(), reduce()
+console.log('Javascript loaded correctly1')
 
-let persons = [
-    {firstName: 'Anna', age: 28,},
-    {firstName: 'jon', age: 18,},
-    {firstName: 'Greta', age: 68,}
-]
-console.log("persons", persons)
+//Vad är en function?
+//det är ett återanvänbart kodblock som kan återanvändas.
 
-//map()
+//Deklarera och anropar man functioner?
 
-let nameList = persons.map(function (person) {
-    return person.firstName;
-});
-console.log(nameList)
+ //syntax för en att deklarera
 
-//filter()
+// function nameOfTheFunction(parametrar) {
+     //Här innanflr sker koden
+     //return result
 
-let ageOverRetirement = persons.filter(function(person){
-    return person.age >= 65;
-})
-console.log(ageOverRetirement)
-//returnerar vad som är sant, i detta fallet om personens age är över eller lika med 65
+// }
 
-// reduce()
-
-let reduceResult = persons.reduce(function(ackumulator, person){
-    return ackumulator + person.age;
-}, 0);
-console.log(reduceResult)
-//reduerar persons ackumulerar åldern av varje person i arrayen persons.
-
-//objects
-
-let family = {
-    personsFamily: 'Albin',
-    partner: 'Ebba',
-    pets: [
-            {type: 'cat',catName: 'Rune', catAge: 5, isFemale: false},
-            {type: 'cat',catName: 'Nelson', catAge: 7, isFemale: false},
-            {type: 'dog', dogName: 'Nuvola', dogAge: 8, isFemale: true}
-        ],
-    siblings: 4 ,
-    parents: 2,
-
+function sayHello() {
+    console.log('hej världen')
 }
-console.log(family);
-//family är ett object med olika keys som pets personsfamily pets osv, pets är en array med objects i
 
-//Mandus rekomenderar att använda denna:
-let girlfriend = family.partner;
-console.log('partner',girlfriend);
-//inte denna, men dem gör samma sak
-let girlFriend = family["partner"];
-console.log(girlFriend);
+//anropa en funcion
+sayHello();
 
-//ändra och lägga till egenskaper
-//ändra
-family.siblings = 5;
-console.log('family is growing?', family);
+//skapa en function med parametrar
 
-//lägg till
-family.country = 'Swerige'
-console.log(family);
+// function sayHello2(name) {
+//     console.log('hej världen' + name)
+// }
 
-//object methods/function
-//lägga till en function
-family.greeting = function () {
-    console.log(`Hej Albins familj, albins partner heter ${this.partner} och dem har ${this.pets.length} katter och hundar i sitt hem`)
-};
-console.log('family här med en function', family)
-family.greeting()
-//this refererar till objectet, så this använder man som family.partner istället för för family.partner så skriver man this.partner
+// let promptName = prompt('säg ditt namn')
 
-// reduce
+// sayHello2('Albin')
+// sayHello2('Albin')
+// sayHello2('Albin')
+// sayHello2(promptName)
+// sayHello2('Thomas')
+// sayHello2('Mandus')
 
-let reduceResultPet = family.pets.reduce(function (ackumulator, pet) {
-    return ackumulator + (pet.catAge || pet.dogAge || 0);
-}, 0);
-console.log(reduceResultPet)
-//eftersom jag har katter och hundar var ja tvungen att kolla efter type.age inte bara pet.age
-//Fick NaN innan jag använde: (pet.catAge || pet.dogAge || 0), 0:an är där för att stoppa NaN
+//skapa function med en return value och varför används det?
+//return avslutar en function och spottar ut ett resultat 
+
+
+    //tidigt avslut av en function
+// function findSquareRoot(x) {
+//     if (x < 0) {
+//         return 'kan inte beräkna kvadratroten av negativa tal'
+//     } else {
+//         return Math.sqrt(x)
+//     }
+// }
+
+// console.log(findSquareRoot(9))
+    //kommer skriva ut 3
+// console.log(findSquareRoot(-11))
+ //returnerar 'kan inte beräkna kvadratroten av negativa tal'
+//------------------------------------------------------------------------
+    //eftersom functionen inte har ett return värde så resulterar det i att functionen utförs, men inte att det returnerar ett värde
+function sayHello() {
+    console.log('hej världen')
+    
+}
+
+let greeting = sayHello()
+console.log(greeting)
+
+//function med två parametrar
+function add(a,b) {
+    return a + b;
+}
+console.log(add(5, 85));
+add(5, 85)
+
+//Namngiven functioner har ett namn
+//Anonyma functioner är utan namn
+//Arrow functions är den tredje sorten (=>)
+
+// //Namngiven functioner har ett namn 
+// har fördelen att dem är lätta att anropa med deras Namn, när functionens syfte är klart definierat. När det är centralt för kodens sammanhang så är namngivna fördelaktiga
+
+// //Anonyma functioner är utan namn
+// är användbara som parametrar inom en function  
+
+// // arrow functioner
+// har kortare syntax för o skriva functioner, när man har kortare functions vill man skriva det med anonyma/arrow functionerden behåller inte sitt eget this värde, vilket kan vara bra eller problematiskt, den är bra för inline functioner
+
+let person = {
+    firstName: 'Albin',
+    lastName:  'Tenghagen',
+    greeting: () => {
+        console.log('hej jag heter' + this.firstName)
+    }
+}
+console.log(person.greeting())
+//den funkar ej för this sparas ej, eftersom de inte funkar med arrow functions
+person.greeting()
+let person2 = {
+    firstName: 'Albin',
+    lastName:  'Tenghagen',
+    greeting: function greeting() {
+        console.log('hej jag heter' + this.firstName)
+    }
+}
+//exempel på en namngiven function från ovan
+
+//arrow function
+let functionName = (parameter1, parameter2) => {
+    //kod som ska utföras
+    return resultat
+}
+
+//kortare arrow function som gör samma sak som exemplet nedan
+let add2 = (a, b) => a + b;
+// samma function som den ovan skriven på ett utförligare vis 
+let add3 = (a, b) => {
+    return a + b;
+}
+
+// arrow function med en high order funtcion map()
+let num = [1, 2, 3, 4, 5, 6, 7];
+
+let multiply = num.map((num1) => num1 * 2);
+console.log(multiply)
